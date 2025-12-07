@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weekly College Routine Generator</title>
+    <link rel="stylesheet" href="CSS2.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+
+    <script src="JS4.js"></script>
+
+<div class="container">
+    <h2>Weekly College Routine Generator</h2>
+
+    <!-- College Start & End Times -->
+    <label>College Start Time</label>
+    <input type="time" id="startTime">
+
+    <label>College End Time</label>
+    <input type="time" id="endTime">
+
+    <!-- Durations -->
+    <label>Theory Class Duration (minutes)</label>
+    <input type="number" id="theoryDuration" placeholder="Example: 60">
+
+    <label>Practical Class Duration (minutes)</label>
+    <input type="number" id="practicalDuration" placeholder="Example: 120">
+
+    <!-- FEATURE 1: Total class time per day -->
+    <div class="feature-box">
+        <h3>Daily Schedule Settings</h3>
+        <label>Total Class Time Per Day (minutes)</label>
+        <input type="number" id="dailyClassTime" placeholder="Example: 360">
+        <small>Maximum minutes of classes per day (including breaks between classes)</small>
+    </div>
+
+    <hr>
+
+    <!-- Teacher Input -->
+    <h3>Add Teacher/Subject</h3>
+    
+    <label>Teacher Name</label>
+    <input type="text" id="teacherName" placeholder="Enter teacher name">
+
+    <label>Subject</label>
+    <input type="text" id="subjectName" placeholder="Enter subject">
+
+    <label>Subject Code</label>
+    <input type="text" id="subjectCode" placeholder="Enter subject code">
+
+    <label>Class Type</label>
+    <select id="classType">
+        <option value="Theory">Theory</option>
+        <option value="Practical">Practical</option>
+    </select>
+
+    <!-- FEATURE 2: How many weekly classes this subject must get -->
+    <div class="feature-box">
+        <label>Weekly Frequency for This Subject</label>
+        <select id="classesPerWeek">
+            <option value="1">1 class per week</option>
+            <option value="2">2 classes per week</option>
+            <option value="3" selected>3 classes per week (Standard)</option>
+            <option value="4">4 classes per week</option>
+            <option value="5">5 classes per week (Every day)</option>
+        </select>
+        <small>How many times this subject should appear in the weekly schedule</small>
+    </div>
+
+    <button onclick="addTeacher()">Add Teacher</button>
+    
+    <hr>
+    
+    <button onclick="generateWeeklyRoutine()">Generate Weekly Routine</button>
+
+    <!-- NEW: Teacher List Dropdown Button -->
+    <button id="toggleTeacherList" onclick="toggleTeacherList()">Show Teachers</button>
+
+    <!-- NEW: Teacher List Section -->
+    <div id="teacherList" class="hidden"></div>
+
+    <div id="routine"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
