@@ -1,2 +1,2 @@
-# College-Project
+# college project 2
 weekly routine
