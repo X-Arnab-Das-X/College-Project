@@ -3,6 +3,9 @@ let teachers = []; // { id, name, subject, code, classType, weeklyFrequency }
 
 // ---------- Teacher UI / Management ----------
 
+5
+
+
 function addTeacher() {
     const name = document.getElementById("teacherName").value.trim();
     const subject = document.getElementById("subjectName").value.trim();
